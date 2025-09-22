@@ -27,13 +27,18 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
+            ->login()
             ->id('admin')
             ->path('admin')
-            ->login()
-            // ->locale('es')            
+            ->brandName('WPP-CRM')
+            ->favicon('https://images.icon-icons.com/4048/PNG/512/whatsapp_logo_icon_257004.png')
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->brandLogo(asset('https://images.icon-icons.com/4048/PNG/512/whatsapp_logo_icon_257004.png'))
+            ->brandLogoHeight('3rem')          
+
+
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -42,7 +47,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
-                FilamentInfoWidget::class,
+                // FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

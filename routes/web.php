@@ -8,6 +8,8 @@ Route::get('/', function () {
     return redirect('/admin');
 });
 
+
+
 // Comentar rutas que ya no necesitas con Filament
 /*
 Route::get('/', function () {
