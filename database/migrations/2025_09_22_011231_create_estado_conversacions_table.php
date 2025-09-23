@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('estado_conversacions', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('descripcion')->nullable();
+            $table->string('color', 7)->default('#6B7280');
+            $table->boolean('activo')->default(true);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('estado_conversacions');
